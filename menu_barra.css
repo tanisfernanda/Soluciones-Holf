@@ -25,8 +25,8 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 12px 24px;
+    position: relative;
 }
-
 .nav-brand {
     display: flex;
     align-items: center;
@@ -35,7 +35,7 @@ body {
 
 .logo-icon {
     font-size: 28px;
-    color: #00e5bc; 
+    color: #00e5bc;
     display: flex;
     align-items: center;
 }
@@ -60,13 +60,12 @@ body {
 .nav-links li {
     position: relative;
 }
-
 .nav-links a {
     display: flex;
     align-items: center;
     gap: 8px;
     text-decoration: none;
-    color: #8b9bb4; 
+    color: #8b9bb4;
     font-size: 14px;
     font-weight: 500;
     padding: 8px 12px;
@@ -78,7 +77,6 @@ body {
     font-size: 15px;
     transition: color 0.3s ease;
 }
-
 .nav-links a:hover {
     color: #00e5bc;
 }
@@ -106,9 +104,61 @@ body {
 .action-btn:hover {
     color: #00e5bc;
 }
-/* Diseño adaptable (Responsivo para pantallas pequeñas) */
+.cart-badge {
+    position: absolute;
+    top: -2px;
+    right: -4px;
+    background-color: #00e5bc;
+    color: #050b10;
+    font-size: 10px;
+    font-weight: bold;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
+}
 @media (max-width: 900px) {
+    .menu-toggle {
+        display: block;
+    }
+
     .nav-links {
-        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #081118;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-links.active {
+        max-height: 350px; 
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        justify-content: center;
+        padding: 14px;
+        width: 100%;
     }
 }

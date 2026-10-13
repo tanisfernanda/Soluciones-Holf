@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
     <header class="header">
         <nav class="navbar">
+            
+            <!-- Logo y Marca -->
             <div class="nav-brand">
                 <div class="logo-icon">
                     <i class="fa-solid fa-cubes"></i>
@@ -19,9 +22,16 @@
                     <span>Mobiliario que transforma espacios</span>
                 </div>
             </div>
-            <ul class="nav-links">
+
+            <!-- Botón del Menú Hamburguesa (Móvil) -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Enlaces de Navegación Centrales -->
+            <ul class="nav-links" id="navLinks">
                 <li>
-                    <a href="menu_principal.html">
+                    <a href="menu_principal.html"->
                         <i class="fa-solid fa-house"></i> Inicio
                     </a>
                 </li>
@@ -46,6 +56,8 @@
                     </a>
                 </li>
             </ul>
+
+            <!-- Iconos de Utilidad a la Derecha -->
             <div class="nav-actions">
                 <button class="action-btn" aria-label="Buscar">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -55,11 +67,30 @@
                 </button>
                 <button class="action-btn cart-btn" aria-label="Carrito de compras">
                     <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge">2</span>
                 </button>
             </div>
 
         </nav>
     </header>
 
+    <!-- Script simple para hacer funcionar el menú desplegable en móviles -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            // Cambiar icono de barras a una "X" y viceversa
+            const icon = menuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
 </body>
 </html>
