@@ -1,113 +1,120 @@
-body {
+
+    body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #0e0e0e, #1a1a1a);
+      background: radial-gradient(circle at center, #1b365d 0%, #0a111a 100%);
       font-family: 'Segoe UI', sans-serif;
-      color: #f5f5f5;
+      color: #64ffda;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       overflow: hidden;
     }
-    a.circle-item {
-  text-decoration: none;
-  color: inherit;
-}
 
+    a.circle-item {
+      text-decoration: none;
+      color: #64ffda;
+    }
 
     .circle-container {
       position: relative;
-      width: 500px;
-      height: 500px;
+      width: 450px;
+      height: 450px;
       border-radius: 50%;
       margin: auto;
-      animation: fadeIn 1.5s ease-out forwards;
     }
 
+    /* Centro del círculo principal */
     .circle-center {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: #2c2c2c;
-      width: 200px;
-      height: 200px;
+      background: linear-gradient(135deg, #0d1b2a, #1b263b);
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 15px;
-      box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
-      animation: popIn 1s ease forwards;
+      padding: 10px;
+      border: 3px solid #64ffda;
+      box-shadow: 0 0 25px rgba(100, 255, 218, 0.4), inset 0 0 15px rgba(100, 255, 218, 0.2);
     }
 
-    .circle-center p {
-      font-size: 26px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      color: #f5f5f5;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-      margin: 0;
+    .circle-center svg {
+      width: 50px;
+      height: 50px;
+      fill: #64ffda;
     }
 
+    /* Elementos circulares del menú */
     .circle-item {
       position: absolute;
-      width: 100px;
-      height: 100px;
-      background: #1a1a1a;
-      border: 2px solid #2f2f2f;
+      width: 75px;
+      height: 75px;
+      background: linear-gradient(135deg, #1b263b, #0d1b2a);
+      border: 2px solid #415a77;
       border-radius: 50%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    /* Texto ubicado fuera/alrededor de los botones */
+    .circle-item span {
+      position: absolute;
       font-size: 12px;
-      transition: transform 0.4s ease, background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-      opacity: 0;
-      animation: slideUp 0.8s ease forwards;
+      font-weight: 600;
+      white-space: nowrap;
+      color: #e0fbfc;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
     }
 
     .circle-item:hover {
-      background: #ffffff;
-      transform: scale(1.15);
-      cursor: pointer;
-      color: #1a1a1a;
-      box-shadow: 0 0 20px rgba(255,255,255,0.1);
+      background: #64ffda;
+      border-color: #ffffff;
+      transform: translate(-50%, -50%) scale(1.1);
+      box-shadow: 0 0 20px rgba(100, 255, 218, 0.8);
     }
 
     .circle-item:hover svg {
-      fill: #1a1a1a;
+      fill: #0d1b2a;
     }
 
     .circle-item svg {
       width: 30px;
       height: 30px;
-      margin-bottom: 5px;
-      fill: #d1d5db;
+      fill: #64ffda;
       transition: fill 0.3s ease;
     }
 
-    .item1 { top: 0%; left: 50%; transform: translate(-50%, -50%); animation-delay: 0.2s; }
-    .item2 { top: 20%; left: 85%; transform: translate(-50%, -50%); animation-delay: 0.4s; }
-    .item3 { top: 60%; left: 100%; transform: translate(-50%, -50%); animation-delay: 0.6s; }
-    .item4 { top: 100%; left: 50%; transform: translate(-50%, -50%); animation-delay: 0.8s; }
-    .item5 { top: 60%; left: 0%; transform: translate(-50%, -50%); animation-delay: 1.0s; }
-    .item6 { top: 20%; left: 15%; transform: translate(-50%, -50%); animation-delay: 1.2s; }
+    /* Posicionamiento exacto en órbita circular (6 elementos distribuidos) */
+    /* Item 1 (Arriba) */
+    .item1 { top: 0%; left: 50%; transform: translate(-50%, -50%); }
+    .item1 span { top: -25px; }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
+    /* Item 2 (Arriba Derecha) */
+    .item2 { top: 25%; left: 93%; transform: translate(-50%, -50%); }
+    .item2 span { right: -85px; }
 
-    @keyframes popIn {
-      from { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
-      to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-    }
+    /* Item 3 (Abajo Derecha) */
+    .item3 { top: 75%; left: 93%; transform: translate(-50%, -50%); }
+    .item3 span { right: -75px; }
 
-    @keyframes slideUp {
-      from { opacity: 0; transform: translate(-50%, -40%) scale(0.8); }
-      to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-    }
+    /* Item 4 (Abajo) */
+    .item4 { top: 100%; left: 50%; transform: translate(-50%, -50%); }
+    .item4 span { bottom: -25px; }
+
+    /* Item 5 (Abajo Izquierda) */
+    .item5 { top: 75%; left: 7%; transform: translate(-50%, -50%); }
+    .item5 span { left: -75px; }
+
+    /* Item 6 (Arriba Izquierda) */
+    .item6 { top: 25%; left: 7%; transform: translate(-50%, -50%); }
+    .item6 span { left: -80px; }
