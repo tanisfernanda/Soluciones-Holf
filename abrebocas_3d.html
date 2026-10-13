@@ -74,23 +74,6 @@
         </nav>
     </header>
 
-    <!-- Script simple para hacer funcionar el menú desplegable en móviles -->
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            // Cambiar icono de barras a una "X" y viceversa
-            const icon = menuToggle.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
-        });
-    </script>
+    <script src="menu_barra.js"></script>
 </body>
 </html>
