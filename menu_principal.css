@@ -53,8 +53,8 @@
     /* Elementos circulares del menú */
     .circle-item {
       position: absolute;
-      width: 75px;
-      height: 75px;
+      width: 155px;
+      height: 155px;
       background: linear-gradient(135deg, #1b263b, #0d1b2a);
       border: 2px solid #415a77;
       border-radius: 50%;
@@ -68,8 +68,7 @@
 
     /* Texto ubicado fuera/alrededor de los botones */
     .circle-item span {
-      position: absolute;
-      font-size: 12px;
+      font-size: 18px;
       font-weight: 600;
       white-space: nowrap;
       color: #e0fbfc;
@@ -96,25 +95,25 @@
 
     /* Posicionamiento exacto en órbita circular (6 elementos distribuidos) */
     /* Item 1 (Arriba) */
-    .item1 { top: 0%; left: 50%; transform: translate(-50%, -50%); }
+    .item1 { top: -6%; left: 50%; transform: translate(-50%, -50%); }
     .item1 span { top: -25px; }
 
     /* Item 2 (Arriba Derecha) */
-    .item2 { top: 25%; left: 93%; transform: translate(-50%, -50%); }
+    .item2 { top: 30%; left: 93%; transform: translate(-50%, -50%); }
     .item2 span { right: -85px; }
 
     /* Item 3 (Abajo Derecha) */
-    .item3 { top: 75%; left: 93%; transform: translate(-50%, -50%); }
+    .item3 { top: 80%; left: 93%; transform: translate(-50%, -50%); }
     .item3 span { right: -75px; }
 
     /* Item 4 (Abajo) */
-    .item4 { top: 100%; left: 50%; transform: translate(-50%, -50%); }
+    .item4 { top: 105%; left: 50%; transform: translate(-50%, -50%); }
     .item4 span { bottom: -25px; }
 
     /* Item 5 (Abajo Izquierda) */
-    .item5 { top: 75%; left: 7%; transform: translate(-50%, -50%); }
+    .item5 { top: 80%; left: 7%; transform: translate(-50%, -50%); }
     .item5 span { left: -75px; }
 
     /* Item 6 (Arriba Izquierda) */
-    .item6 { top: 25%; left: 7%; transform: translate(-50%, -50%); }
+    .item6 { top: 30%; left: 7%; transform: translate(-50%, -50%); }
     .item6 span { left: -80px; }
